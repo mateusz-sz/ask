@@ -14,7 +14,7 @@
  */
 #include "common.h"
 
-/* You can modify following definitions to try out different settings. */ 
+/* You can modify following definitions to try out different settings. */
 #define T double
 #define BLOCK 16
 
@@ -35,22 +35,71 @@ static void fill(T *dst, int size) {
 
 /* ijk (& jik) */
 static __noinline void multiply0(int n, T_p a, T_p b, T_p c) {
-  /* XXX: Fill in this procedure! */
+  double sum = 0.0;
+
+  for(int i=0; i<n; i++) {
+    for(int j=0; j<n; j++) {
+      sum = 0.0;
+      for(int k=0; k<n; k++) {
+        sum += M(a, i, k) * M(b, k, j);
+      }
+      M(c, i, j) = sum;
+    }
+  }
+
 }
 
 /* kij (& ikj) */
 static __noinline void multiply1(int n, T_p a, T_p b, T_p c) {
-  /* XXX: Fill in this procedure! */
+  double r;
+
+  for(int k=0; k<n; k++) {
+    for(int i=0; i<n; i++) {
+      r = M(a, i, k);
+      for(int j=0; j<n; j++) {
+        M(c, i, j) += r * M(b, k, j);
+      }
+    }
+  }
 }
 
 /* jki (& kji) */
 static __noinline void multiply2(int n, T_p a, T_p b, T_p c) {
-  /* XXX: Fill in this procedure! */
+  double r;
+
+  for(int j=0; j<n; j++) {
+    for(int k=0; k<n; k++) {
+      r = M(b, k, j);
+      for(int i=0; i<n; i++) {
+        M(c, i, j) += M(a, i, k) * r;
+      }
+    }
+  }
 }
 
 /* BLOCK*BLOCK tiled version */
 static __noinline void multiply3(int n, T_p a, T_p b, T_p c) {
-  /* XXX: Fill in this procedure! */
+
+  for (int i = 0; i < n; i += BLOCK)
+  {
+    for (int j = 0; j < n; j += BLOCK)
+    {
+      for (int k = 0; k < n; k += BLOCK)
+      {
+        /* BLOCK * BLOCK elements mini matrix multiplication */
+        for (int i1 = i; i1 < i + BLOCK; i1++)
+        {
+          for (int j1 = j; j1 < j + BLOCK; j1++)
+          {
+            for (int k1 = k; k1 < k + BLOCK; k1++)
+            {
+              M(c, i1, j1) += M(a, i1, k1) * M(b, k1, j1);
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 typedef void (*matmult_t)(int n, T *a, T *b, T *c);
