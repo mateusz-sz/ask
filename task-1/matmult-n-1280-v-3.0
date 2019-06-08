@@ -1,0 +1,21 @@
+
+ Performance counter stats for './matmult -n 1280 -v 3':
+
+        4970750616      cycles                                                        (44.92%)
+          35169900      bus-cycles                                                    (45.12%)
+       13920651802      instructions              #    2.80  insn per cycle           (54.31%)
+        2249877341      branches                                                      (54.51%)
+          13879343      branch-misses             #    0.62% of all branches          (54.72%)
+         341513935      cache-references                                              (54.92%)
+          61213188      cache-misses              #   17.924 % of all cache refs      (45.90%)
+        4333669343      L1-dcache-loads                                               (36.51%)
+         178980321      L1-dcache-load-misses     #    4.13% of all L1-dcache hits    (36.30%)
+          17365736      LLC-loads                                                     (36.10%)
+           1465920      LLC-load-misses           #    8.44% of all LL-cache hits     (35.93%)
+
+       1.470036219 seconds time elapsed
+
+       1.450214000 seconds user
+       0.013237000 seconds sys
+
+

@@ -1,0 +1,21 @@
+
+ Performance counter stats for './matmult -n 2304 -v 2':
+
+      461744339073      cycles                                                        (45.45%)
+        6705423286      bus-cycles                                                    (45.45%)
+       98632628357      instructions              #    0.21  insn per cycle           (54.54%)
+       12391786384      branches                                                      (54.54%)
+           7886782      branch-misses             #    0.06% of all branches          (54.55%)
+       70104979092      cache-references                                              (54.55%)
+       15673540312      cache-misses              #   22.357 % of all cache refs      (45.46%)
+       24734535414      L1-dcache-loads                                               (36.36%)
+       40020918629      L1-dcache-load-misses     #  161.80% of all L1-dcache hits    (36.36%)
+       25193078727      LLC-loads                                                     (36.36%)
+        6357382294      LLC-load-misses           #   25.23% of all LL-cache hits     (36.36%)
+
+     280.688833699 seconds time elapsed
+
+     278.959226000 seconds user
+       0.046331000 seconds sys
+
+

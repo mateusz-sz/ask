@@ -1,0 +1,21 @@
+
+ Performance counter stats for './matmult -n 2048 -v 2':
+
+      323397694274      cycles                                                        (45.45%)
+        9096799281      bus-cycles                                                    (45.45%)
+       69714752421      instructions              #    0.22  insn per cycle           (54.55%)
+        8797380496      branches                                                      (54.55%)
+           8161570      branch-misses             #    0.09% of all branches          (54.55%)
+       34575137952      cache-references                                              (54.55%)
+       17117402265      cache-misses              #   49.508 % of all cache refs      (45.46%)
+       17513272464      L1-dcache-loads                                               (36.36%)
+       27904275902      L1-dcache-load-misses     #  159.33% of all L1-dcache hits    (36.36%)
+       18600120348      LLC-loads                                                     (36.36%)
+       10770509820      LLC-load-misses           #   57.91% of all LL-cache hits     (36.36%)
+
+     382.090125992 seconds time elapsed
+
+     378.146138000 seconds user
+       0.036266000 seconds sys
+
+

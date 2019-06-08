@@ -1,0 +1,21 @@
+
+ Performance counter stats for './matmult -n 256 -v 1':
+
+          33699219      cycles                                                        (12.76%)
+            238978      bus-cycles                                                    (42.78%)
+         118175035      instructions              #    3.51  insn per cycle           (72.74%)
+          17409605      branches                                                    
+             75060      branch-misses             #    0.43% of all branches        
+           4572172      cache-references                                            
+             17970      cache-misses              #    0.393 % of all cache refs      (57.22%)
+     <not counted>      L1-dcache-loads                                               (0.00%)
+     <not counted>      L1-dcache-load-misses                                         (0.00%)
+     <not counted>      LLC-loads                                                     (0.00%)
+     <not counted>      LLC-load-misses                                               (0.00%)
+
+       0.010236719 seconds time elapsed
+
+       0.006843000 seconds user
+       0.003382000 seconds sys
+
+

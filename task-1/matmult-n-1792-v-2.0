@@ -1,0 +1,21 @@
+
+ Performance counter stats for './matmult -n 1792 -v 2':
+
+      204508394795      cycles                                                        (45.45%)
+        2441285701      bus-cycles                                                    (45.45%)
+       46362737436      instructions              #    0.23  insn per cycle           (54.54%)
+        5820199989      branches                                                      (54.54%)
+           4141357      branch-misses             #    0.07% of all branches          (54.55%)
+       31768305444      cache-references                                              (54.55%)
+        5392765503      cache-misses              #   16.975 % of all cache refs      (45.46%)
+       11621089690      L1-dcache-loads                                               (36.37%)
+       17469682891      L1-dcache-load-misses     #  150.33% of all L1-dcache hits    (36.37%)
+       11460053536      LLC-loads                                                     (36.36%)
+        2038607966      LLC-load-misses           #   17.79% of all LL-cache hits     (36.36%)
+
+     102.223877572 seconds time elapsed
+
+     101.653028000 seconds user
+       0.026473000 seconds sys
+
+
